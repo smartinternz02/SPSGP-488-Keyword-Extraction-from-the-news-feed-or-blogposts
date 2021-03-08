@@ -1,0 +1,14 @@
+import requests
+
+url = "https://textanalysis-keyword-extraction-v1.p.rapidapi.com/keyword-extractor-text"
+
+payload = "text=Donald%20John%20Trump%20(born%20June%2014%2C%201946)%20is%20the%2045th%20and%20current%20president%20of%20the%20United%20States.%20Before%20entering%20politics%2C%20he%20was%20a%20businessman%20and%20television%20personality.%20Born%20and%20raised%20in%20Queens%2C%20New%20York%20City%2C%20Trump%20attended%20Fordham%20University%20for%20two%20years%20and%20received%20a%20bachelor's%20degree%20in%20economics%20from%20the%20Wharton%20School%20of%20the%20University%20of%20Pennsylvania.%20He%20became%20president%20of%20his%20father's%20real%20estate%20business%20in%201971%2C%20renamed%20it%20The%20Trump%20Organization%2C%20and%20expanded%20its%20operations%20to%20building%20or%20renovating%20skyscrapers%2C%20hotels%2C%20casinos%2C%20and%20golf%20courses.%20Trump%20later%20started%20various%20side%20ventures%2C%20mostly%20by%20licensing%20his%20name.%20Trump%20and%20his%20businesses%20have%20been%20involved%20in%20more%20than%204%2C000%20state%20and%20federal%20legal%20actions%2C%20including%20six%20bankruptcies.%20He%20owned%20the%20Miss%20Universe%20brand%20of%20beauty%20pageants%20from%201996%20to%202015%2C%20and%20produced%20and%20hosted%20the%20reality%20television%20series%20The%20Apprentice%20from%202003%20to%202015.%20Trump's%20political%20positions%20have%20been%20described%20as%20populist%2C%20protectionist%2C%20isolationist%2C%20and%20nationalist.%20He%20entered%20the%202016%20presidential%20race%20as%20a%20Republican%20and%20was%20elected%20in%20a%20surprise%20electoral%20college%20victory%20over%20Democratic%20nominee%20Hillary%20Clinton%20while%20losing%20the%20popular%20vote.%5Ba%5D%20He%20became%20the%20oldest%20first-term%20U.S.%20president%5Bb%5D%20and%20the%20first%20without%20prior%20military%20or%20government%20service.%20His%20election%20and%20policies%20have%20sparked%20numerous%20protests.%20Trump%20has%20made%20many%20false%20or%20misleading%20statements%20during%20his%20campaign%20and%20presidency.%20The%20statements%20have%20been%20documented%20by%20fact-checkers%2C%20and%20the%20media%20have%20widely%20described%20the%20phenomenon%20as%20unprecedented%20in%20American%20politics.%20Many%20of%20his%20comments%20and%20actions%20have%20been%20characterized%20as%20racially%20charged%20or%20racist.&wordnum=5"
+headers = {
+    'content-type': "application/x-www-form-urlencoded",
+    'x-rapidapi-key': "ab7e3efa09msh23e8545fe66fe69p1c6ff4jsnde7712dccfec",
+    'x-rapidapi-host': "textanalysis-keyword-extraction-v1.p.rapidapi.com"
+    }
+
+response = requests.request("POST", url, data=payload, headers=headers)
+
+print(response.text)
